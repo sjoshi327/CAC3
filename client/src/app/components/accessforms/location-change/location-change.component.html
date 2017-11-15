@@ -1,0 +1,231 @@
+<!--header Block starts -->
+<div class="container">
+  <form #locationChange="ngForm">
+    <div class="row color rounded bg-info text-white mt-2">
+      <h5>{{config.locationchange.GENERAL}}</h5>
+    </div>
+    <!-- header Block ends -->
+    <!--div for type of category starts -->
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.locationchange.CATEGORY}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="category" [(ngModel)]="category">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- div for type of category ends -->
+    <!-- div for type of access starts-->
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.locationchange.ACCESS_TYPE}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="accessType" [(ngModel)]="accessType">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- div for type of access ends -->
+    <!-- div for employee details starts -->
+    <div class="row color rounded bg-info text-white mt-2">
+      <h5>{{config.locationchange.LOCATION_CHANGE_FORM}}</h5>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <h6><strong>{{config.locationchange.EMP_ID}}</strong></h6>
+        <input class="form-control" type="text" value={{empId}}  name="empId" [(ngModel)]="empId">
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-6">
+            <h6><strong>{{config.locationchange.EMP_TYPE}}</strong></h6>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-12 py-3">
+                <label class="custom-control custom-radio">
+                  <input id="radio1" name="empType" type="radio" value="{{config.locationchange.PERMANANT}}" class="custom-control-input" [(ngModel)]="empType">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">{{config.locationchange.PERMANANT}}</span>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <label class="custom-control custom-radio">
+                  <input id="radio1" name="empType" type="radio" value="{{config.locationchange.TEMPORARY}}" class="custom-control-input" [(ngModel)]="empType">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">{{config.locationchange.TEMPORARY}}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.locationchange.NAME}}</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" value={{empName}}  name="empName" readonly="true">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.locationchange.DOJ}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control bg-white" bsDatepicker name="dateOfJoining" value={{doj}} readonly="true" />
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-4 py-2">
+            <h6><strong>{{config.locationchange.DESIGNATION}}</strong></h6>
+          </div>
+          <div class="col-sm-8">
+            <input class="form-control" type="text" name="designation" readonly="true">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.locationchange.PROJECT}}</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="project" value="{{project}}" readonly="true">
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.locationchange.OU}}</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" value={{department}} name="ou" readonly="true">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-4 py-2">
+            <h6><strong>{{config.locationchange.STATUS}}</strong></h6>
+          </div>
+          <div class="col-sm-4 py-2">
+            <label class="custom-control custom-radio">
+              <input id="radio3" name="status" type="radio" class="custom-control-input" value="{{config.locationchange.PERMANANT}}" [(ngModel)]="status">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.locationchange.PERMANANT}}</span>
+            </label>
+          </div>
+          <div class="col-sm-4 py-2">
+            <label class="custom-control custom-radio">
+              <input id="radio3" name="status" type="radio" class="custom-control-input" value="{{config.locationchange.TEMPORARY}}" [(ngModel)]="status">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.locationchange.TEMPORARY}}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-7 py-2">
+            <h6><strong>{{config.locationchange.DOE}}</strong></h6>
+          </div>
+          <div class="col-sm-5">
+            <input type="text" class="form-control bg-white" bsDatepicker name="dateOfExpiry" [(ngModel)]="dateOfExpiry">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-12 py-2">
+            <h6><input type="checkbox" name="projectTransfer" [(ngModel)]="projectTransfer"><strong>  {{config.locationchange.PROJECT_TRANSFER}}</strong></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--div for employee details ends-->
+    <!--div for employee location change request starts-->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.locationchange.EXISTING_LOCATION}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="existingLocation" [(ngModel)]="existingLocation">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.locationchange.NEW_LOCATION}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="newLocation" [(ngModel)]="newLocation">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--div for employee location change request ends-->
+    <!--div for signature starts here-->
+    <div class="row color rounded bg-info mt-2 text-white">
+      <h5>{{config.locationchange.SIGNATURES}}</h5>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.locationchange.APPLICANTS_SIGNATURES}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="signature" [(ngModel)]="signature">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.locationchange.DATE}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control bg-white" placement="top" bsDatepicker name="date" [(ngModel)]="date">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- div for signature ends -->
+    <!-- div for sumbit and go back button starts -->
+    <div class="row justify-content-center">
+      <div class="col-sm-3 mt-2 mb-3">
+        <button class="btn btn-success text-white form-control submit" (click)="locationChangeSubmit(locationChange)">{{config.locationchange.SUBMIT}}</button>
+      </div>
+      <div class="col-sm-3 mt-2 mb-3">
+        <button class="btn btn-danger text-white form-control myBtn" (click)="back()">{{config.locationchange.BACK}}</button>
+      </div>
+    </div>
+    <!-- div for sumbit and go back button starts -->
+  </form>
+</div>
+<!-- End of form -->

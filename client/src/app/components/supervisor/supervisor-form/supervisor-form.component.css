@@ -1,0 +1,49 @@
+/*  For Header */
+.pad {
+	padding-top: 1rem;
+}
+
+/*For IR 71 Heading */
+.align {
+text-align: center;
+}
+
+/*For NIIT Logo */
+.logo {
+	height: 3rem;
+	width: 6rem;
+}
+
+.acolor {
+	color: blue;
+}
+
+.acolor:hover {
+	color: red;
+}
+
+.color {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	background-color: #7fffd4;
+}
+
+/* Media Query for screen size min width is 320 and max width is 480 */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+.pad {
+	padding-top: 0.5rem;
+}
+}
+
+/* Media Query for screen size of min width is 575 and max width is 1200*/
+@media only screen and (min-device-width : 575px) and (max-device-width : 1200px) {
+.pad {
+	padding-top: 0.8rem;
+}
+}
+
+/* Media Query for screen size of min width is 1224*/
+@media only screen  and (min-width : 1224px) {
+}

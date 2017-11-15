@@ -1,0 +1,16 @@
+/* media queries */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .pad {
+    padding-top: 0.5rem;
+  }
+}
+
+@media only screen and (min-device-width: 575px) and (max-device-width: 1200px) {
+  .pad {
+    padding-top: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+}
+

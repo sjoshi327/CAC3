@@ -1,0 +1,16 @@
+/*media query for device width between 320px-480px*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .pad {
+    padding-top: 0.5rem;
+  }
+}
+
+/*media query for device width between 575px-1200px*/
+@media only screen and (min-device-width: 575px) and (max-device-width: 1200px) {
+  .pad {
+    padding-top: 0.8rem;
+  }
+}
+
+/*media query for device width above 1224px*/
+@media only screen and (min-width: 1224px) {}

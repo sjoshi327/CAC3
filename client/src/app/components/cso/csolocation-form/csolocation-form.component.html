@@ -1,0 +1,476 @@
+<!--start of main div -->
+<div class="main">
+  <div class="container-fluid">
+    <!-- start of heading -->
+    <div class="row pad">
+      <div class="col-sm-2 align">
+        <img src="{{config.csoform.IMG_SRC}}" alt="logo" class="logo">
+      </div>
+      <div class="col-sm-8 text-center">
+        <h2><strong>{{config.csoform.IR_HEADING}}</strong></h2>
+      </div>
+      <div class="col-sm-2">
+        <h4 class="text-center">{{config.csoform.VERSION}}</h4>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <!-- end of heading -->
+
+  <!-- start of modal window of guideline -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <a (click)="openModalWithClass(template)"><h6 class="acolor">{{config.csoform.GUIDELINE_MODAL}}</h6></a>
+      </div>
+    </div>
+  </div>
+  <!-- end of modal window of guideline -->
+
+  <!-- start of the whole parent div containing whole form -->
+  <div class="container">
+    <div class="row color rounded bg-info text-white">
+      <h5>{{config.csoform.GENERAL}}</h5>
+    </div>
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.csoform.CATEGORY}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control bg-white" type="text" name="newname" value="Employee" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.csoform.ACCESS_TYPE}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control bg-white" type="text" name="newname" value="New Access" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- starts of the ir71 div tag-->
+    <div class="row color rounded bg-info text-white mt-2">
+      <h5>{{config.csoform.IR_FORM}}</h5>
+    </div>
+    <!-- end of the ir71 div tag -->
+
+    <!-- start of the first block of ir71 components containing employeeid and employeetype -->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <h6><strong>{{config.csoform.EMP_ID}}:</strong></h6>
+        <input class="form-control" type="text" name="designation" value={{empp.employeeID}} ngModel readonly="true">
+      </div>
+      <div class="col-sm-6 border py-3">
+        <h6><strong>{{config.csoform.EMP_TYPE}}:</strong></h6>
+        <input class="form-control" type="text" name="designation" value={{empp.empType}} ngModel readonly="true">
+      </div>
+    </div>
+    <!-- end of the first block of components containing employeeid and employeetype -->
+
+    <!-- start of the second block of components containing name date of joining and designation -->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.csoform.NAME}}:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="name" value={{empp.employeeName}} ngModel readonly="true">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.csoform.DOJ}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" value={{empp.dateOfJoining}} readonly="true" name="doj" ngModel/>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-4 py-2">
+            <h6><strong>{{config.csoform.DESIGNATION}}:</strong></h6>
+          </div>
+          <div class="col-sm-8">
+            <input class="form-control" type="text" name="designation" value={{empp.designation}} ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the second block of components containing name, date of joining and designation -->
+
+    <!-- start of the third block components containing project and ou department -->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.csoform.PROJECT}}:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="project" value={{empp.project}} ngModel>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.csoform.OU}}:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="ou" value={{empp.department}} ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the third block components containing project and ou department -->
+
+    <!-- start of the fourth block components containing project status and expiry date -->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-4 py-2">
+            <h6><strong>{{config.csoform.STATUS}}:</strong></h6>
+          </div>
+          <div class="col-sm-4 py-2">
+            <label class="custom-control custom-radio">
+              <input id="radio3" name="status" type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.csoform.PERMANENT}}</span>
+            </label>
+          </div>
+          <div class="col-sm-4 py-2">
+            <label class="custom-control custom-radio">
+              <input id="radio3" name="status" type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.csoform.TEMPERORY}}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-7 py-2">
+            <h6><strong>{{config.csoform.DOE_TEMP}}:</strong></h6>
+          </div>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" value={{empp.dateOfExpiry}} readonly="true" name="doe" ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the fourth block components containing project status and expiry date -->
+
+    <!-- start of the fifth block components containing project transfer details -->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-12 py-2">
+            <h6><input type="checkbox" name="transfer"><strong>{{config.csoform.PROJECT_TRANSFER}}</strong></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.csoform.EXISTING_PROJECT}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="existname" value={{empp.existingProject}} ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.csoform.NEW_PROJECT}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="newname" value={{empp.newProject}} ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the fifth block components containing project transfer details -->
+
+    <!-- start of the sixth block components containing signatures and date -->
+    <div class="row color rounded bg-info mt-2 text-white">
+      <h5>{{config.csoform.SIGNATURES}}</h5>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.csoform.APPLICANTS_SIGNATURES}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="existname" ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.csoform.DATE}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" value={{empp.requestDate}} name="appdate" ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the sixth block components containing signatures and date -->
+
+    <!-- start of the physical access requirement containing zones and its details-->
+    <div class="row color rounded mt-2 bg-info text-white">
+      <h5>{{config.csoform.PHYSICAL_ACCESS}}</h5>
+    </div>
+    <div class="row border mt-1 bg-white">
+      <div class="col-sm-8 border py-3">
+        <div class="row">
+          <div class="col-sm-3">
+            <h6><strong>{{config.csoform.ZONES}}:</strong></h6>
+          </div>
+          <div class="col-sm-3">
+            <h6><input type="checkbox" [(ngModel)]="public" value="public" name="employee">{{config.csoform.PUBLIC}}</h6>
+          </div>
+          <div class="col-sm-3">
+            <h6><input type="checkbox" [(ngModel)]="internal" value="internal" name="employee">{{config.csoform.INTERNAL}}</h6>
+          </div>
+          <div class="col-sm-3">
+            <h6><input type="checkbox" [(ngModel)]="restricted" value="restricted" name="employee"> {{config.csoform.RESTRICTED}}</h6>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-3 py-2">
+            <h6><strong>{{config.csoform.DETAILS}}:</strong></h6>
+          </div>
+          <div class="col-sm-9">
+            <input class="form-control" type="text" name="employee">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border">
+        <div class="row border">
+          <div class="col-sm-12 py-3">
+            <label class="custom-control custom-radio">
+              <input id="radio5" name="accessType" type="radio" value="Temporary" class="custom-control-input" [(ngModel)]="accessType">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.csoform.TEMPERORY}}</span>
+            </label>
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col-sm-12 py-3">
+            <label class="custom-control custom-radio">
+              <input id="radio5" name="accessType" type="radio" value="Permanent" class="custom-control-input" [(ngModel)]="accessType">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.csoform.PERMANENT}}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the physical access requirement containing zones and its details-->
+
+    <!-- start of the access card details block  containing card no,issuid by and date-->
+    <div class="row color rounded mt-2 bg-info text-white">
+      <h5>{{config.csoform.ACCESS_CARD_DETAIL}}</h5>
+    </div>
+    <div class="row mt-1 border bg-white">
+      <div class="col-sm-12 border">
+        <div class="row">
+          <div class="col-sm-4 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <h6><strong>{{config.csoform.ACCESS_CARD_NUMBER}}</strong></h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <h6><strong>{{config.csoform.ISSUED_BY}}</strong></h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <h6><strong>{{config.csoform.DATE}}</strong></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="" [(ngModel)]="accessCard">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="" [(ngModel)]="accessType">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" bsDatepicker [(ngModel)]="datepickerModel" readonly="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the access card details block  containing card no,issuid by and date-->
+
+    <!-- start of the authorized signatures details block  containing hr cso dh/ph/pn signatures with date-->
+    <div class="row color rounded  bg-info mt-2 text-white">
+      <h5>{{config.csoform.AUTHORIZE_SIGN}}</h5>
+    </div>
+    <div class="row mt-1 border">
+      <div class="col-sm-12 border">
+        <div class="row">
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-3 py-2">
+                <h6><strong>{{config.csoform.HRO}}</strong></h6>
+              </div>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" name="" readonly="true">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-3 py-2">
+                <h6><strong>{{config.csoform.CSO}}</strong></h6>
+              </div>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" name="">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-5 py-2">
+                <h6><strong>{{config.csoform.DH_PH_PM}}</strong></h6>
+              </div>
+              <div class="col-sm-7">
+                <input class="form-control" type="text" name="" [(ngModel)]="sign" readonly="true">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-3 py-2">
+                <h6><strong>{{config.csoform.CISO}}</strong></h6>
+              </div>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" name="" readonly="true">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder="{{config.csoform.DATE_FORMAT}}" readonly="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder="{{config.csoform.DATE_FORMAT}}" [(ngModel)]="datepickerModel" readonly="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder="{{config.csoform.DATE_FORMAT}}" readonly="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder="{{config.csoform.DATE_FORMAT}}" readonly="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the authorized signatures details block  containing hr cso dh/ph/pn signatures with date-->
+
+    <!-- starts of row containing buttons accept and send back -->
+    <div class="row justify-content-center mt-2 mb-3">
+      <div class="col-sm-3">
+        <!-- buttons to accept -->
+        <button class="btn btn-success form-control" (click)="accept(template1)">{{config.csoform.ACCEPT}}</button>
+      </div>
+      <div class="col-sm-3">
+        <!-- buttons to reject -->
+        <button class="btn btn-danger form-control" (click)="reject(template2)">{{config.csoform.SEND_BACK}}</button>
+      </div>
+    </div>
+    <!-- ends of row containing buttons accept and send back -->
+
+  </div>
+  <!-- end of the whole parent div containing whole form -->
+
+</div>
+<!-- end of the main div -->
+
+<!-- start of the alloted modal window  -->
+<template #template1>
+  <div class="modal-header">
+    <h4 class="modal-title">Message</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <strong>{{config.csoform.SUCCESSFUL_ALLOT}}</strong>
+  </div>
+</template>
+<!-- end of the alloted modal window  -->
+
+<!-- start of the reject modal window  -->
+<template #template2>
+  <div class="modal-header">
+    <h4 class="modal-title">{{config.csoform.MESSAGE}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <strong>{{config.csoform.BACK_MSG}}</strong>
+  </div>
+  <!--buttons to confirm that you want to  -->
+  <div class="modal-footer">
+    <button class="btn btn-md btn-primary" (click)="backit()">{{config.csoform.YES}}</button>
+    <button class="btn btn-md btn-danger" (click)="modalRef.hide()">{{config.csoform.NO}}</button>
+  </div>
+</template>
+<!-- end of the reject modal window  -->
+

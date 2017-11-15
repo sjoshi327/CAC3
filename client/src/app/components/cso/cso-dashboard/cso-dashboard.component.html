@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  Plugin CSS
+  <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet"> Custom fonts for this template
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<!-- body section starts -->
+
+<body class="fixed-nav bg-dark" id="page-top">
+  <!-- navbar starts -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="#">{{config.csodash.CAC}}</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="CSO Dashboard">
+          <a class="nav-link">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">
+                {{config.csodash.DASHBOARD_LABEL}}</span>
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="New Request">
+          <a class="nav-link" [routerLink]="['/category']">
+              <i class="fa fa-fw fa-area-chart"></i>
+              <span class="nav-link-text">
+                {{config.csodash.NEW_REQ}}</span>
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Access Requests">
+          <a class="nav-link" (click)="showAccess()">
+              <i class="fa fa-fw fa-table"></i>
+              <span class="nav-link-text">
+                {{config.csodash.ACCESS_REQ}}</span>
+            </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left"></i>
+            </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-5">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" href="#" id="messagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-envelope"></i>
+              <span class="d-lg-none">{{config.csodash.MESSAGES}}
+                <span class="badge badge-pill badge-primary">12</span>
+              </span>
+              <span class="new-indicator text-primary d-none d-lg-block">
+                <i class="fa fa-fw fa-circle"></i>
+                <span class="number">{{config.csodash.MESSAGE_NUMBER}}</span>
+              </span>
+            </a>
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">{{config.csodash.NEW_MESSAGE_LABEL}}</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <strong>{{config.csodash.SENDER_NAME}}</strong>
+                <span class="small float-right text-muted">{{config.csodash.RECIEVING_TIME}}</span>
+                <div class="dropdown-message small">{{config.csodash.PING}}</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <strong>{{config.csodash.SENDER_NAME_SECOND}}</strong>
+                <span class="small float-right text-muted">{{config.csodash.RECIEVING_TIME}}</span>
+                <div class="dropdown-message small">{{config.csodash.MESSAGE}}</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <strong>Shubhang</strong>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">Thank You Prakhar for your hardwork in this Project</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">
+                View all messages
+              </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" href="#" id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-bell"></i>
+              <span class="d-lg-none">Status Alerts
+                <span class="badge badge-pill badge-warning">6 New</span>
+              </span>
+              <span class="new-indicator text-warning d-none d-lg-block">
+                <i class="fa fa-fw fa-circle"></i>
+                <span class="number">6</span>
+              </span>
+            </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <span class="text-success">
+                  <strong>
+                    <i class="fa fa-long-arrow-up"></i>
+                    Status Update</strong>
+                </span>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <span class="text-danger">
+                  <strong>
+                    <i class="fa fa-long-arrow-down"></i>
+                    Status Update</strong>
+                </span>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <span class="text-success">
+                  <strong>
+                    <i class="fa fa-long-arrow-up"></i>
+                    Status Update</strong>
+                </span>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">
+                View all alerts
+              </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+              <i class="fa fa-fw fa-sign-out"></i>
+              {{config.csodash.BACK}}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar ends -->
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">{{config.csodash.DASHBOARD_LABEL}}</a>
+        </li>
+        <li class="breadcrumb-item active">{{config.csodash.MYDASHBOARD}}</li>
+      </ol>
+      <div class="card mb-3">
+        <div class="card-body acolor text-center">
+          <a href="">{{config.csodash.STATUS}}</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-user"></i> {{config.csodash.DETAILS}}
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12 text-center my-auto">
+                  <div class="h4 mb-0 text-primary">Chander Sehgal</div>
+                  <div class="small text-muted">Supervisor Name</div>
+                  <hr>
+                  <div class="h4 mb-0 text-warning">Gr. Noida SEZ 1</div>
+                  <div class="small text-muted">{{config.csodash.LOCATION_LABEL}}</div>
+                  <hr>
+                  <div class="h4 mb-0 text-success">SSB-CSDM-RP</div>
+                  <div class="small text-muted">{{config.csodash.OU_LABEL}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" *ngIf="show==true">
+            <nav class="nav nav-tabs nav-success" id="myTab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">{{config.csodash.NEW_ACCESS}}</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">{{config.csodash.LOCATION_CHANGE}}</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">{{config.csodash.LOST_CARD}}</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">{{config.csodash.DAMAGE_CARD}}</a>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>{{config.csodash.S_NO}}</th>
+                      <th>{{config.csodash.EMP_ID}}</th>
+                      <th>{{config.csodash.EMP_NAME}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let data of super">
+                      <th scope="row">{{super.indexOf(data)+1}}</th>
+                      <td><a class="btn" (click)="getID(data.employeeID)">{{data.employeeID}}</a></td>
+                      <td>{{data.employeeName}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>{{config.csodash.S_NO}}</th>
+                      <th>{{config.csodash.EMP_ID}}</th>
+                      <th>{{config.csodash.EMP_NAME}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let data of super">
+                     <th scope="row">{{super.indexOf(data)+1}}</th>
+                      <td><a class="btn" (click)="getEmpIdLocationRequest(data.employeeID)">{{data.employeeID}}</a></td>
+                      <td>{{data.employeeName}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>{{config.csodash.S_NO}}</th>
+                      <th>{{config.csodash.EMP_ID}}</th>
+                      <th>{{config.csodash.EMP_NAME}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!--  <tr *ngFor="let data of super">
+    <th scope="row">super.indexOf(data)+1</th>
+    <td><a type="button" (click)="getID(data.employeeID)">{{data.employeeID}}</a></td>
+    <td>{{data.employeeName}}</td>
+  </tr> -->
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>{{config.csodash.S_NO}}</th>
+                      <th>{{config.csodash.EMP_ID}}</th>
+                      <th>{{config.csodash.EMP_NAME}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!--  <tr *ngFor="let data of super">
+    <th scope="row">super.indexOf(data)+1</th>
+    <td><a type="button" (click)="getID(data.employeeID)">{{data.employeeID}}</a></td>
+    <td>{{data.employeeName}}</td>
+  </tr> -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-user-o"></i> Prakhar Pandey
+            </div>
+            <div class="card-body img-center">
+              <img class="img-size" src="https://www.youngliving.com/vo/content/app/design/images/default-profile-image.jpg" alt="https://www.youngliving.com/vo/content/app/design/images/default-profile-image.jpg">
+            </div>
+            <div class="card-footer small text-muted">
+              Updated yesterday at 11:59 PM
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-bell-o"></i> Feed Example
+            </div>
+            <div class="list-group list-group-flush small">
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Aam Aadmi</strong> posted a new article to
+                    <strong>Google Website</strong>.
+                    <div class="text-muted smaller">Today at 5:43 PM - 5m ago</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Mango Man</strong> sent you a new message!
+                    <div class="text-muted smaller">Today at 4:37 PM - 1hr ago</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Tanupreet Again</strong> added a new photo to the album
+                    <strong>Beach</strong>.
+                    <div class="text-muted smaller">Today at 4:31 PM - 1hr ago</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <i class="fa fa-code-fork"></i>
+                    <strong>Yet Again</strong> forked the
+                    <strong>startbootstrap-sb-admin</strong> repository on
+                    <strong>GitHub</strong>.
+                    <div class="text-muted smaller">Today at 3:54 PM - 2hrs ago</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                  {{config.csodash.VIEW_ACTIVITY}}
+                </a>
+            </div>
+            <div class="card-footer small text-muted">
+              Updated yesterday at 11:59 PM
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="sticky-footer">
+    <div class="container">
+      <div class="text-center">
+        <small>{{config.csodash.COPYRIGHT}}</small>
+      </div>
+    </div>
+  </footer>
+  <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!-- damage card form -->
+<div class="container">
+  <div class="row color rounded bg-info text-white mt-2 py-2 px-2">
+    <h5 class="damageform">{{config.damage.DAMAGE_FORM}}</h5>
+  </div>
+  <div class="row border bg-white mt-1">
+    <div class="col-sm-6 border py-3">
+      <h6 class="damageid"><strong>{{config.damage.EMP_ID}}</strong></h6>
+      <input class="form-control bg-white" type="text" name="designation" value={{empId}} readonly="true">
+    </div>
+    <!-- selection of employee type start -->
+    <div class="col-sm-6 border py-3">
+      <div class="row">
+        <div class="col-sm-6">
+          <h6 class="damagetype"><strong>{{config.damage.EMP_TYPE}}</strong></h6>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-12 py-3">
+              <label class="custom-control custom-radio">
+                <input id="radio1" name="empType" value="Permanent" type="radio" class="custom-control-input" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description damageper">{{config.damage.PERMANENT}}</span>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <label class="custom-control custom-radio">
+                <input id="radio1" name="empType" value="Temporary" type="radio" class="custom-control-input" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description damagetemp">{{config.damage.TEMPORARY}}</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- selection of employee type end -->
+  </div>
+  <div class="row border bg-white mt-1">
+    <!-- div for inserting name starts -->
+    <div class="col-sm-4 border py-3">
+      <div class="row">
+        <div class="col-sm-3 py-2">
+          <h6 class="damagename"><strong>{{config.damage.NAME}}</strong></h6>
+        </div>
+        <div class="col-sm-10">
+          <input class="form-control bg-white" type="text" name="name" value={{empName}} readonly="true">
+        </div>
+      </div>
+    </div>
+    <!-- div for inserting name ends -->
+    <!-- div for DOJ starts -->
+    <div class="col-sm-4 border py-3">
+      <div class="row">
+        <div class="col-sm-5 py-2">
+          <h6 class="damagedoj"><strong>{{config.damage.DOJ}}</strong></h6>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" class="form-control bg-white" name="doj" value={{doj}} readonly="true" />
+        </div>
+      </div>
+    </div>
+    <!-- div for DOJ ends -->
+    <!-- div for Designation starts -->
+    <div class="col-sm-4 border py-3">
+      <div class="row">
+        <div class="col-sm-4 py-2">
+          <h6 class="damagedesig"><strong>{{config.damage.DESIGNATION}}</strong></h6>
+        </div>
+        <div class="col-sm-8">
+          <input class="form-control" type="text" name="designation" [(ngModel)]="designation" readonly="true">
+        </div>
+      </div>
+    </div>
+    <!-- div for Designation ends -->
+  </div>
+  <div class="row border bg-white mt-1">
+    <div class="col-sm-12 border py-3">
+      <!-- div for Project/Function starts -->
+      <div class="row">
+        <div class="col-sm-2 py-2">
+          <h6 class="damageproj"><strong>{{config.damage.PROJECT}}</strong></h6>
+        </div>
+        <div class="col-sm-10">
+          <input class="form-control bg-white" type="text" name="project" value={{project}} readonly="true">
+        </div>
+      </div>
+      <!-- div for Project/Function ends -->
+      <!-- div for OU/Department starts -->
+      <div class="row mt-2">
+        <div class="col-sm-2 py-2">
+          <h6 class="damageou"><strong>{{config.damage.OU}}</strong></h6>
+        </div>
+        <div class="col-sm-10">
+          <input class="form-control bg-white" type="text" name="ou" value={{department}} readonly="true">
+        </div>
+      </div>
+      <!-- div for OU/Department ends -->
+    </div>
+  </div>
+  <!-- div for commenting and date starts -->
+  <div class="row border mt-1">
+    <div class="col-sm-12 text-center mb-2">
+      <p class="mt-2 damagehead"><strong>{{config.damage.COMMENTS_HEADING}}</strong>
+      </p>
+      <div class="form-group">
+        <textarea class="form-control" id="exampleTextarea" rows="7" placeholder="Comment The Reason Of Damage Here" [(ngModel)]="comments"></textarea>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 py-2">
+          <h6 class="damagedate"><strong>{{config.damage.SUBMIT_DATE}}</strong></h6>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control bg-white" readonly="true" placement="top" bsDatepicker name="appdate" [(ngModel)]="date">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- div for commenting and date ends -->
+  <!-- div for button starts -->
+  <div class="row justify-content-center">
+    <div class="col-sm-3 mt-2 mb-3">
+      <button class="btn btn-success text-white form-control damagesubmit" (click)="getDamage(comments,date)">{{config.damage.SUBMIT}}</button>
+    </div>
+    <div class="col-sm-3 mt-2 mb-3">
+      <button class="btn btn-danger text-white form-control" (click)="back()">{{config.damage.BACK}}</button>
+    </div>
+  </div>
+  <!-- div for button ends -->
+</div>
+<!-- damage card form ends -->

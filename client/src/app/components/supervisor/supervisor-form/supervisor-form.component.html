@@ -1,0 +1,419 @@
+<div class="main">
+  <!--Starts Header-->
+  <div class="container-fluid">
+    <div class="row pad">
+      <div class="col-sm-2 align">
+        <img src="http://www.niit-tech.com/niit_technologies_logo.jpg" alt="logo" class="logo">
+      </div>
+      <div class="col-sm-8 text-center">
+        <h2 class='heading'><strong>{{config.supervisorform.IR_HEADING}}</strong></h2>
+      </div>
+      <div class="col-sm-2">
+        <h4 class="text-center">{{config.supervisorform.VERSION}}</h4>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <!--Ends Header-->
+  <div class="container">
+    <div class="row color rounded bg-info text-white">
+      <h5>{{config.supervisorform.GENERAL}}</h5>
+    </div>
+    <!--Div Tag For Category Field Starts Here-->
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.supervisorform.CATEGORY}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control bg-white" type="text" name="newname" value="Employee" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Div Tag Row For Category Field Ends Here-->
+    <!--Div Tag For Access Type Field Start Here-->
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.supervisorform.ACCESS_TYPE}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control bg-white" type="text" name="newname" value="New Access" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Div Tag For Access Type Field Ends Here-->
+    <!--Div Tag For IR 71 Form Field Start here-->
+    <div class="row color rounded bg-info text-white mt-2">
+      <h5>{{config.supervisorform.IR}}</h5>
+    </div>
+    <div class="row border bg-white mt-1">
+      <!--Div Tag For Employee Id Form Field Start Here-->
+      <div class="col-sm-6 border py-3">
+        <h6 class='id'><strong>{{config.supervisorform.EMPP_ID}}:</strong></h6>
+        <input class="form-control bg-white" type="text" name="designation" value={{empp.employeeID}} readonly ngModel>
+      </div>
+      <!--Div Tag For Employee Id Form Field End Here-->
+      <!--Div Tag For Employee Type Field Start Here-->
+      <div class="col-sm-6 border py-3">
+        <h6><strong>{{config.supervisorform.EMPP_TYPE}}:</strong></h6>
+        <input class="form-control bg-white" type="text" name="designation" value={{empp.empType}} readonly ngModel>
+      </div>
+      <!--Div Tag For Employee Type  Field End Here-->
+    </div>
+    <div class="row border bg-white mt-1">
+      <!--Div Tag For Employee Name Field Start Here-->
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6 class='name'><strong>{{config.supervisorform.NAME}}:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control bg-white" type="text" name="name" value={{empp.employeeName}} readonly ngModel>
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For Employee Name Field End Here-->
+      <!--Div Tag For Date Of Joining Field Start Here-->
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.supervisorform.DATE_JOINING}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control bg-white" value={{empp.dateOfJoining}} name="doj" ngModel readonly="true" />
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For Date Of Joining Field End Here-->
+      <!--Div Tag For Designation Field Start Here-->
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-4 py-2">
+            <h6 class='desg'><strong>{{config.supervisorform.DESG}}:</strong></h6>
+          </div>
+          <div class="col-sm-8">
+            <input class="form-control bg-white" type="text" name="designation" value={{empp.designation}} ngModel readonly>
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For Designation Field End Here-->
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <!--Div Tag For Project Field Start Here-->
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6 class='proj'><strong>{{config.supervisorform.PROJ}}:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control bg-white" type="text" name="project" value={{empp.project}} readonly ngModel>
+          </div>
+        </div>
+        <!--Div Tag For Project Field End Here-->
+        <!--Div Tag For OU Field Start Here-->
+        <div class="row mt-2">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.supervisorform.OU}}:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control bg-white" type="text" name="ou" value={{empp.department}} readonly ngModel>
+          </div>
+        </div>
+        <!--Div Tag For OU Field Ends Here-->
+      </div>
+    </div>
+    <div class="row border bg-white mt-1">
+      <!--Div Tag For Status Field Start Here-->
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-4 py-2">
+            <h6><strong>{{config.supervisorform.STATUS}}:</strong></h6>
+          </div>
+          <div class="col-sm-8">
+            <input name="status" type="text" value={{empp.accessType}} readonly class="form-control bg-white">
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For Status Field Ends Here-->
+      <!--Div Tag For Date Of Expiry Of Temp Card Field Start Here-->
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-7 py-2">
+            <h6><strong>{{config.supervisorform.DATE_EXP_CARD}}:</strong></h6>
+          </div>
+          <div class="col-sm-5">
+            <input type="text" class="form-control bg-white" value={{empp.dateOfExpiry}} readonly="true" name="doe" ngModel>
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For Date Of Expiry Of Temp Card Field Ends Here-->
+    </div>
+    <!--Div Tag For Project Transfer Field Start Here-->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-12 py-2">
+            <h6><input type="checkbox" name="transfer"><strong> {{config.supervisorform.PRO_TRANS}}</strong></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Div Tag For Project Transfer Field Ends Here-->
+    <div class="row border bg-white mt-1">
+      <!--Div Tag For Existing Project Name Field Start Here-->
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.supervisorform.EXIST_PROJ}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control bg-white" type="text" name="existname" value={{empp.existingProject}} readonly ngModel>
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For Existing Project Name Field End Here-->
+      <!--Div Tag For New Project Name Field Start Here-->
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.supervisorform.NEW_PROJ}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control bg-white" type="text" name="newname" readonly value={{empp.newProject}} ngModel>
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For New Project Name Field Ends Here-->
+    </div>
+    <!--Div Tag For Signatures Field Start here-->
+    <div class="row color rounded bg-info mt-2 text-white">
+      <h5>{{config.supervisorform.SIGN}}</h5>
+    </div>
+    <div class="row border bg-white mt-1">
+      <!--Div Tag For Applicant Signatures Field Start Here-->
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.supervisorform.APPLICANT_SIGN}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control bg-white" type="text" name="existname" readonly ngModel>
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For Applicant Signatures Field Ends Here-->
+      <!--Div Tag For Date Field Start Here-->
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.supervisorform.DATE}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control bg-white" value={{empp.requestDate}} readonly name="appdate" ngModel>
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For Date Field Ends Here-->
+    </div>
+    <div class="row color rounded mt-2 bg-info text-white">
+      <h5>{{config.supervisorform.PHYSICAL_ACCESS}}</h5>
+    </div>
+    <div class="row border mt-1 bg-white">
+      <div class="col-sm-8 border py-3">
+        <!--Div Tag For Zones Field Start Here-->
+        <div class="row">
+          <div class="col-sm-3">
+            <h6><strong>{{config.supervisorform.ZONES}}:</strong></h6>
+          </div>
+          <div class="col-sm-3">
+            <h6><input type="checkbox" [(ngModel)]="public" value="public" name="employee"> {{config.supervisorform.PUBLIC}}</h6>
+          </div>
+          <div class="col-sm-3">
+            <h6><input type="checkbox" [(ngModel)]="internal" value="internal" name="employee">{{config.supervisorform.INTERNAL}}</h6>
+          </div>
+          <div class="col-sm-3">
+            <h6><input type="checkbox" [(ngModel)]="restricted" value="restricted" name="employee">{{config.supervisorform.RESTRICTED}}</h6>
+          </div>
+        </div>
+        <!--Div Tag For Zones Field Ends Here-->
+        <!--Div Tag For Details Field Start Here-->
+        <div class="row mt-2">
+          <div class="col-sm-3 py-2">
+            <h6><strong>{{config.supervisorform.DETAILS}}:</strong></h6>
+          </div>
+          <div class="col-sm-9">
+            <input class="form-control" type="text" name="employee">
+          </div>
+        </div>
+        <!--Div Tag For Details Field Ends Here-->
+      </div>
+      <!--Div Tag For Card Type Field Start Here-->
+      <div class="col-sm-4 border">
+        <div class="row border">
+          <div class="col-sm-12 py-3">
+            <label class="custom-control custom-radio">
+              <input id="radio5" name="accessType" type="radio" value="Temporary" class="custom-control-input" [(ngModel)]="accessType">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.supervisorform.TEMP}}</span>
+            </label>
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col-sm-12 py-3">
+            <label class="custom-control custom-radio">
+              <input id="radio5" name="accessType" type="radio" value="Permanent" class="custom-control-input" [(ngModel)]="accessType">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.supervisorform.PERM}}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--Div Tag For Card Type Field Ends Here-->
+    </div>
+    <!--Div Tag For Authorization Signatures Field Starts Here-->
+    <div class="row color rounded  bg-info mt-2 text-white">
+      <h5>{{config.supervisorform.AUTH_SIGN}}</h5>
+    </div>
+    <div class="row mt-1 border">
+      <div class="col-sm-12 border">
+        <div class="row">
+          <!--Div Tag Form HRO Field Starts Here-->
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-3 py-2">
+                <h6><strong>{{config.supervisorform.HRO}}</strong></h6>
+              </div>
+              <div class="col-sm-9">
+                <input class="form-control bg-white" type="text" name="" readonly>
+              </div>
+            </div>
+          </div>
+          <!--Div Tag Form HRO Field Ends Here-->
+          <div class="col-sm-3 py-3">
+            <!--Div Tag Form CSO Field Starts Here-->
+            <div class="row">
+              <div class="col-sm-3 py-2">
+                <h6><strong>{{config.supervisorform.CSO}}</strong></h6>
+              </div>
+              <div class="col-sm-9">
+                <input class="form-control bg-white" type="text" name="" readonly>
+              </div>
+            </div>
+            <!--Div Tag Form CSO Field Ends Here-->
+          </div>
+          <div class="col-sm-3 py-3">
+            <!--Div Tag Form DH/PH/PM Field Starts Here-->
+            <div class="row">
+              <div class="col-sm-5 py-2">
+                <h6><strong>{{config.supervisorform.DH}}</strong></h6>
+              </div>
+              <div class="col-sm-7">
+                <input class="form-control bg-white" type="text" name="" [(ngModel)]="sign">
+              </div>
+            </div>
+            <!--Div Tag Form DH/PH/PM Field Ends Here-->
+          </div>
+          <div class="col-sm-3 py-3">
+            <!--Div Tag Form CISO Field Starts Here-->
+            <div class="row">
+              <div class="col-sm-3 py-2">
+                <h6><strong>{{config.supervisorform.CISO}}</strong></h6>
+              </div>
+              <div class="col-sm-9">
+                <input class="form-control bg-white" type="text" name="" readonly>
+              </div>
+            </div>
+            <!--Div Tag Form CISO Field Ends Here-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3 py-3">
+            <!--Div Tag Form HRO Date Field Start Here-->
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder={{config.supervisorform.DATE_FORMAT}} readonly="true" />
+              </div>
+            </div>
+            <!--Div Tag Form HRO Date Field Ends Here-->
+          </div>
+          <div class="col-sm-3 py-3">
+            <!--Div Tag Form CSO Date Field Start Here-->
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder={{config.supervisorform.DATE_FORMAT}} readonly="true" />
+              </div>
+            </div>
+            <!--Div Tag Form CSO Date Field Ends Here-->
+          </div>
+          <div class="col-sm-3 py-3">
+            <!--Div Tag Form DH Date Field Start Here-->
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder={{config.supervisorform.DATE_FORMAT}} [(ngModel)]="datepickerModel" readonly="true" />
+              </div>
+            </div>
+            <!--Div Tag Form DH Date Field Ends Here-->
+          </div>
+          <div class="col-sm-3 py-3">
+            <!--Div Tag Form Ciso Date Field Starts Here-->
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder={{config.supervisorform.DATE_FORMAT}} readonly="true" />
+              </div>
+            </div>
+            <!--Div Tag Form Ciso Date Field Ends Here-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-2 mb-3">
+      <!--Div Tag Form Accept Button Field Starts here-->
+      <div class="col-sm-3">
+        <button class="btn btn-success form-control accept" (click)="acceptRequest(template1)">{{config.supervisorform.ACCEPT}}</button>
+      </div>
+      <!--Div Tag Form Accept Button Field Ends Here-->
+      <!--Div Tag Form reject Button Field Starts Here-->
+      <div class="col-sm-3">
+        <button class="btn btn-danger form-control" (click)="rejectRequest(template2)">{{config.supervisorform.SENDBACK}}</button>
+      </div>
+      <!--Div Tag Form Reject Button Field Ends Here-->
+    </div>
+  </div>
+</div>
+<!--Template For Accept Starts -->
+<template #template1>
+  <div class="modal-header">
+    <h4 class="modal-title">{{config.supervisorform.MSG}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <strong>{{config.supervisorform.FORWARD_MSG}}</strong>
+  </div>
+</template>
+<!-- Template For Accept Ends -->
+<!-- Template For Reject Starts -->
+<template #template2>
+  <div class="modal-header">
+    <h4 class="modal-title">{{config.supervisorform.MSG}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <strong>{{config.supervisorform.BACK_MSG}}</strong>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-md btn-primary" (click)="backIt()">{{config.supervisorform.YES}}</button>
+    <button class="btn btn-md btn-danger" (click)="modalRef.hide()">{{config.supervisorform.NO}}</button>
+  </div>
+</template>
+<!-- Template For Reject Ends  -->
+
+

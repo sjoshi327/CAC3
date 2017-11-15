@@ -1,0 +1,48 @@
+/* padding block */
+.pad {
+  padding-top: 1rem;
+}
+
+/* alignment */
+.align {
+  text-align: center;
+}
+
+/* logo */
+.logo {
+  height: 3rem;
+  width: 6rem;
+}
+
+/* color of modal */
+.acolor {
+  color: blue;
+}
+
+.acolor:hover {
+  color: red;
+}
+
+.color {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  background-color: #7fffd4;
+}
+/* end of color of modal */
+
+/* media queries */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+.pad {
+    padding-top: 0.5rem;
+  }
+}
+
+@media only screen and (min-device-width: 575px) and (max-device-width: 1200px) {
+  .pad {
+    padding-top: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 1224px) {}
+/* end of media queries */

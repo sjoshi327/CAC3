@@ -1,0 +1,206 @@
+<!--start of header of accesstypeforms-->
+<div class="container-fluid">
+  <div class="row pad">
+    <div class="col-sm-2 align">
+      <img src="http://www.niit-tech.com/niit_technologies_logo.jpg" alt="logo" class="logo">
+    </div>
+    <div class="col-sm-8 text-center">
+      <h2><strong>{{config.accessform.ACCESS_REQUEST_FORM}}</strong></h2>
+    </div>
+    <div class="col-sm-2">
+      <h4 class="text-center">Ver 1.0</h4>
+    </div>
+  </div>
+  <hr>
+</div>
+<!-- end of header of acesstypeforms -->
+<!-- start of guideline section -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <a (click)="openModalWithClass(template)"><h6 class="acolor">Click Here To See Guidelines</h6></a>
+    </div>
+  </div>
+</div>
+<!-- end of guideline section -->
+<!--start of access type category section-->
+<div class="container">
+  <div class="row color rounded bg-info text-white">
+    <h5>{{config.accessform.CATEGORY}}</h5>
+  </div>
+  <div class="row border bg-white mt-1">
+    <div class="col-sm-12 border py-3">
+      <div class="row">
+        <div class="col-sm-3">
+          <h6><strong>{{config.accessform.CATEGORY}}:</strong></h6>
+        </div>
+        <div class="col-sm-3">
+          <label class="custom-control custom-radio">
+            <input id="radio1" name="category" type="radio" class="custom-control-input" value="Employee" [(ngModel)]="category" (change)="OnRadioButtonSelection()">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{config.accessform.EMPLOYEE}}</span>
+          </label>
+        </div>
+        <div class="col-sm-3">
+          <label class="custom-control custom-radio">
+            <input id="radio1" name="category" type="radio" class="custom-control-input" value="Client" [(ngModel)]="category" (change)="OnRadioButtonSelection()">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{config.accessform.CLIENT}}</span>
+          </label>
+        </div>
+        <div class="col-sm-3">
+          <label class="custom-control custom-radio">
+            <input id="radio1" name="category" type="radio" class="custom-control-input" value="Consultants" [(ngModel)]="category" (change)="OnRadioButtonSelection()">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{config.accessform.CONSULTANTS}}</span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+          <label class="custom-control custom-radio">
+            <input id="radio1" name="category" type="radio" class="custom-control-input contractor" value="Contractors" [(ngModel)]="category" (change)="OnRadioButtonSelection()">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{config.accessform.CONTRACTORS}}</span>
+          </label>
+        </div>
+        <div class="col-sm-3">
+          <label class="custom-control custom-radio">
+            <input id="radio1" name="category" type="radio" class="custom-control-input" value="Outsourced" [(ngModel)]="category" (change)="OnRadioButtonSelection()">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{config.accessform.OUTSOURCED}}</span>
+          </label>
+        </div>
+        <div class="col-sm-3">
+          <label class="custom-control custom-radio">
+            <input id="radio1" name="category" type="radio" class="custom-control-input" value="Third Party Vendors" [(ngModel)]="category" (change)="OnRadioButtonSelection()">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{config.accessform.THIRD_PARTY_VENDORS}}</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of access type category section -->
+<div *ngIf="selectedCategory==='Employee'">
+  <div class="container">
+    <div class="row color rounded bg-info text-white mt-2">
+      <h5>{{config.accessform.ACCESSTYPE}}</h5>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-3">
+            <h6><strong>{{config.accessform.ACCESSTYPE}}:</strong></h6>
+          </div>
+          <div class="col-sm-3">
+            <label class="custom-control custom-radio">
+              <input id="radio1" name="acesstype" type="radio" value="New access" class="custom-control-input" [(ngModel)]="accesstype" (change)="onCaseChange()">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.accessform.NEW_ACCESS}}</span>
+            </label>
+          </div>
+          <div class="col-sm-3">
+            <label class="custom-control custom-radio">
+              <input id="radio1" name="acesstype" type="radio" value="Lost" class="custom-control-input" [(ngModel)]="accesstype" (change)="onCaseChange()">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.accessform.LOST}}</span>
+            </label>
+          </div>
+          <div class="col-sm-3">
+            <label class="custom-control custom-radio">
+              <input id="radio1" name="acesstype" type="radio" value="Location Change" class="custom-control-input" [(ngModel)]="accesstype" (change)="onCaseChange()">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.accessform.LOCATION_CHANGE}}</span>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-3">
+            <label class="custom-control custom-radio">
+              <input id="radio1" name="acesstype" type="radio" value="Damage" class="custom-control-input damage" [(ngModel)]="accesstype" (change)="onCaseChange()">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.accessform.DAMAGE}}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- start of thirdparty form section -->
+<div *ngIf="selectedCategory==='Third Party Vendors'">
+  <app-third-party></app-third-party>
+</div>
+<!-- end of thirdparty form section -->
+<!-- start of New acces form section -->
+<div *ngIf=" accessTypeCase==='New access' && selectedCategory==='Employee'">
+  <app-new-access></app-new-access>
+</div>
+<!-- end of new access form section -->
+<!-- start of lostcard form section -->
+<div *ngIf=" accessTypeCase==='Lost' && selectedCategory==='Employee'">
+  <app-lost-card></app-lost-card>
+</div>
+<!-- end of lostcard form section -->
+<!-- start of location change form section -->
+<div *ngIf=" accessTypeCase==='Location Change' && selectedCategory==='Employee'">
+  <app-location-change></app-location-change>
+</div>
+<!-- end of loaction change form section -->
+<!-- start of Damage card form section -->
+<div *ngIf=" accessTypeCase==='Damage' && selectedCategory==='Employee'">
+  <app-damaged-card></app-damaged-card>
+</div>
+<!-- end of damage card form section -->
+<!-- start of guideline template -->
+<template #template>
+  <div class="modal-header">
+    <h4 class="modal-title">Guidelines</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <strong>Guidelines for Github Account</strong>
+    <p>
+      1.Login into code editor via Github
+          or If
+        New User?Create Github account to Login into Code Editor.
+      <br> 2.Create Repository in github,Repository Name should be in lower-case,you must also give a short description of the repository.
+      <br> 3.For file names,proper naming convention should be followed.
+      <br> 4.You can choose to make the repository either public or private. Public repositories are visible to the public, while private repositories are only accessible to you, and people you share them with. Your account must be on a paid plan to create a private repository.
+      <br> 5.Create a README, which is a document describing your project.
+      <br> 6.You can also create a CODEOWNERS file, which describes which individuals or teams own certain files in the repository.
+      <br> 7.You can create a .gitignore file, which is a set of ignore rules.
+      <br> 8.You can choose to add a software license for your project.
+      <br> 9.When you're finished, click Create repository.
+      <br> 10.At the bottom of the resulting Quick Setup page, under "Import code from an old repository", you can choose to import a project to your new repository. To do so, click Import code.
+    </p>
+  </div>
+</template>
+<!-- end of guideline template -->
+
+
+
+
+
+<!-- 
+ <div class="modal-body">
+    <strong>All Door / Any Special Privilege(s):</strong>
+    <p>
+      1. Access request shall be approved by DH/PH/PM as per the business requirement of access, and HR shall endorse ii. Final approval shall be granted by CISO.
+      <br> 2. Only new access authorization will be considered, and all previous privileges shall be disabled in case of Transfer/movement from one project to another.
+      <br> 3. Employee/PM shall notify access control team immediately about any change/relocation/revocation for all door access/any special privilege(s).
+    </p>
+    <strong>Project Specific Access:</strong>
+    <p>
+      1. Based on the business requirement, DH/PH/PM shall approve the request, and project HRO SPOC shall endorse it.
+      <br> 2. Access shall be allocated to new ODC/Project as per the approval granted by DH/PH/PM. All other access shall be disabled.
+      <br> 3. Employee/DH/PM shall notify access control team immediately about any change/relocation/revocation of access of the project via email communication at access helpdesk of respective location.
+      <br> 4. All exceptions shall be granted post CISO approval only.
+    </p>
+  </div> -->

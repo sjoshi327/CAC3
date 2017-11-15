@@ -1,0 +1,36 @@
+{
+  "name": "CAC",
+  "version": "1.0.0",
+  "description": "CAC",
+  "main": "app.js",
+  "scripts": {
+    "test": "nyc mocha || true"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.1",
+    "chai": "^4.1.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^8.0.0",
+    "mocha": "^3.5.3",
+    "mongoose": "^4.11.11",
+    "morgan": "^1.8.2",
+    "mssql": "^4.0.4",
+    "nodemon": "^1.12.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^2.2.1",
+    "request": "^2.83.0",
+    "sinon": "^3.3.0",
+    "supertest": "^3.0.0"
+  },
+  "author": "NIIT",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "supertest": "^3.0.0"
+  }
+}

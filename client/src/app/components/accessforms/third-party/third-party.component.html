@@ -1,0 +1,146 @@
+<!-- Third Party Form -->
+<!--tag for Form starts here -->
+<form #tpsubmit='ngForm'>
+  <!-- parent div starts here -->
+  <div class="container">
+    <!-- div tag for General block starts here -->
+    <div class="row color rounded bg-info text-white mt-2 py-2 px-2">
+      <h5>{{config.thirdparty.GENERAL}}</h5>
+    </div>
+    <!-- div tag for General block ends here -->
+    <!--div tag for Employee Category starts here-->
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.thirdparty.CATEGORY}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="category" value="Employee" [(ngModel)]="category">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- div tag for Employee Category ends here -->
+    <!-- div tag for Access Type start here -->
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.thirdparty.ACCESS_TYPE}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="location" value="location" [(ngModel)]="location">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--div tag for Access Type ends here -->
+    <div class="row color rounded bg-info text-white mt-2 py-2 px-2">
+      <!-- div tag for Third Party Form start here -->
+      <h5>{{config.thirdparty.THIRD_PARTY}}</h5>
+    </div>
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <h6><strong>{{config.thirdparty.EMP_ID}}</strong></h6>
+      <input class="form-control bg-white" type="text" name="designation" value={{empId}} readonly="true">
+      </div>
+      <div class="col-sm-6 border py-3">
+        <h6><strong>{{config.thirdparty.NAME}}</strong></h6>
+          <input class="form-control bg-white" type="text" name="name" value={{empName}} readonly="true">
+      </div>
+    </div>
+    <!--div tag for Third Party Form ends here-->
+    <!--div tag for Visitor's detail starts here-->
+    <div class="row border bg-white mt-1">
+      <!--div tag for Visitor name starts here-->
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-3">
+            <h6><strong>{{config.thirdparty.VISITOR_NAME}}</strong></h6>
+          </div>
+          <div class="col-sm-9">
+            <input class="form-control" type="text" name="visitorName" [(ngModel)]="visitorName">
+          </div>
+        </div>
+      </div>
+      <!--div tag for Visitor name ends here-->
+      <!--div tag for Visitor's duration starts here-->
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-3">
+            <h6><strong>{{config.thirdparty.DURATION}}</strong></h6>
+          </div>
+          <div class="col-sm-9">
+            <input class="form-control" type="text" name="duration" [(ngModel)]="duration">
+          </div>
+        </div>
+      </div>
+      <!--div tag for Visitor's duration ends here-->
+      <!--div tag for Visiting Purpose starts here-->
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-3">
+            <h6><strong>{{config.thirdparty.VISITING_PURPOSE}}</strong></h6>
+          </div>
+          <div class="col-sm-9">
+            <textarea class="form-control" rows="5" name="visitingPurpose" placeholder="Comment The Reason Of Visit Here" [(ngModel)]="visitingPurpose"> </textarea>
+          </div>
+        </div>
+      </div>
+      <!--div tag for Visiting Purpose ends here-->
+    </div>
+    <!--div tag for Visitor's detail ends here-->
+    <!--div tag for Signatures starts here-->
+    <div class="row color rounded bg-info mt-2 text-white py-2 px-2">
+      <h5>{{config.thirdparty.SIGNATURES}}</h5>
+    </div>
+    <!--div tag for Signatures ends here-->
+    <div class="row border bg-white mt-1">
+      <!--div tag for Applicant's Signature starts here-->
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.thirdparty.APPLICANTS_SIGNATURE}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="signature" [(ngModel)]="signature">
+          </div>
+        </div>
+      </div>
+      <!--div tag for Applicant's Signature ends here-->
+      <!--div tag for Date starts here-->
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.thirdparty.DATE}}</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control bg-white" placement="top" bsDatepicker name="applicationDate" [(ngModel)]="applicationDate">
+          </div>
+        </div>
+      </div>
+      <!--div tag for Date ends here-->
+    </div>
+    <div class="row justify-content-center">
+      <!--div tag for Applicant's Signature starts here-->
+      <div class="col-sm-12 mt-2">
+        <div class="row justify-content-center">
+          <!--div tag for Request Submit starts here-->
+          <div class="col-sm-3 mt-2 mb-3">
+            <button class="btn btn-success text-white form-control" (click)='thirdPartySubmit(tpsubmit)'>{{config.thirdparty.SUBMIT}}</button>
+          </div>
+          <!--div tag for Request ends here-->
+          <!--div tag for Go Back starts here-->
+          <div class="col-sm-3 mt-2 mb-3">
+            <button class="btn btn-danger text-white form-control" (click)="back()">{{config.thirdparty.BACK}}</button>
+          </div>
+          <!--div tag for Go Back ends here-->
+        </div>
+      </div>
+      <!--div tag for Applicant's Signature ends here-->
+    </div>
+  </div>
+  <!-- parent div ends here -->
+</form>
+<!--tag for Form ends here -->

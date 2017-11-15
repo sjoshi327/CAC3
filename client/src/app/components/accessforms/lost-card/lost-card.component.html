@@ -1,0 +1,164 @@
+<!-- html lost card -->
+<div class="container">
+  <!--div starts for Access card here-->
+  <div class="row color rounded bg-info text-white mt-2 py-2 px-2">
+    <h5>Lost Access Card Form</h5>
+  </div>
+  <!--div ends for Access card here-->
+  <div class="row border bg-white mt-1">
+    <!--div starts for Employee ID here-->
+    <div class="col-sm-6 border py-3">
+      <h6><strong>{{config.lost.EMP_ID}}</strong></h6>
+      <input class="form-control bg-white" type="text" name="designation" value={{empId}} readonly="true">
+    </div>
+    <!--div endss for Employee ID here-->
+    <div class="col-sm-6 border py-3">
+      <!--div of Employee type  starts  here-->
+      <div class="row">
+        <div class="col-sm-6">
+          <h6><strong>{{config.lost.EMP_TYPE}}</strong></h6>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-12 py-3">
+              <label class="custom-control custom-radio">
+                <input id="radio1" name="empType" value="Permanent" type="radio" class="custom-control-input" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">{{config.lost.PERMANANT}}</span>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <label class="custom-control custom-radio">
+                <input id="radio1" name="empType" value="Temporary" type="radio" class="custom-control-input" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">{{config.lost.TEMPORARY}}</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--div of Employee type  ends  here-->
+    </div>
+  </div>
+  <div class="row border bg-white mt-1">
+    <div class="col-sm-4 border py-3">
+      <!--div of Employee Name  starts  here-->
+      <div class="row">
+        <div class="col-sm-2 py-2">
+          <h6><strong>{{config.lost.NAME}}</strong></h6>
+        </div>
+        <div class="col-sm-10">
+          <input class="form-control bg-white" type="text" name="name" value={{empName}} readonly="true">
+        </div>
+      </div>
+      <!--div of Employee Name  ends  here-->
+    </div>
+    <!--div of Date of Joining starts  here-->
+    <div class="col-sm-4 border py-3">
+      <div class="row">
+        <div class="col-sm-5 py-2">
+          <h6><strong>{{config.lost.DOJ}}</strong></h6>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" class="form-control bg-white" name="doj" value={{doj}} readonly="true" />
+        </div>
+      </div>
+    </div>
+    <!--div of Date of Joining ends  here-->
+    <!--div of Designation starts  here-->
+    <div class="col-sm-4 border py-3">
+      <div class="row">
+        <div class="col-sm-4 py-2">
+          <h6><strong>{{config.lost.DESIGNATION}}</strong></h6>
+        </div>
+        <div class="col-sm-8">
+          <input class="form-control" type="text" name="designation" [(ngModel)]="designation" readonly="true">
+        </div>
+      </div>
+    </div>
+    <!--div of Designation ends  here-->
+  </div>
+  <!--div of project/ou/department starts  here-->
+  <div class="row border bg-white mt-1">
+    <div class="col-sm-12 border py-3">
+      <div class="row">
+        <div class="col-sm-2 py-2">
+          <h6><strong>{{config.lost.PROJECT}}</strong></h6>
+        </div>
+        <div class="col-sm-10">
+          <input class="form-control bg-white" type="text" name="project" value={{project}} readonly="true">
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-sm-2 py-2">
+          <h6><strong>{{config.lost.OU}}</strong></h6>
+        </div>
+        <div class="col-sm-10">
+          <input class="form-control bg-white" type="text" name="ou" value={{department}} readonly="true">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--div of project/ou/department endss  here-->
+  <!--div starts for comment block  here-->
+  <div class="row border mt-1">
+    <div class="col-sm-12 text-center mb-2">
+      <p class="mt-2"><strong>**Lost Your Access Card! Don't Worry Just Fill It And you Will Have A New Card In Two Days</strong>
+      </p>
+      <div class="form-group">
+        <textarea class="form-control" id="exampleTextarea" rows="7" placeholder="Comment The Reason Of Loss Here" [(ngModel)]="comment"></textarea>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 py-2">
+          <h6><strong>{{config.lost.DATEOFLOSS}}</strong></h6>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control bg-white" placeholder={{date}} placement="top" bsDatepicker name="doe" [(ngModel)]="doe" readonly="true">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--div ends for comment here-->
+  <!--div  starts for submit buuton here-->
+  <div class="row justify-content-center">
+    <div class="col-sm-3 mt-2 mb-3">
+      <button class="btn btn-success text-white form-control save" (click)="save(comment,date,template1)">{{config.lost.SUBMIT}}</button>
+    </div>
+    <div class="col-sm-3 mt-2 mb-3">
+      <button class="btn btn-danger text-white form-control back" (click)="back(template2)">
+        {{config.lost.BACK}}</button>
+    </div>
+  </div>
+  <!--div ends for subbmit button  here-->
+  </div>
+
+  <!-- modal window content starts here -->
+<template #template1>
+  <div class="modal-header">
+    <h4 class="modal-title">{{config.newaccess.MSG}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <strong>{{config.newaccess.FORWARD_MSG}}</strong>
+  </div>
+</template>
+<template #template2>
+  <div class="modal-header">
+    <h4 class="modal-title">{{config.newaccess.MSG}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <strong>{{config.newaccess.BACK_MSG}}</strong>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-md btn-primary backit" (click)="backit()">Yes</button>
+    <button class="btn btn-md btn-danger" (click)="modalRef.hide()">No</button>
+  </div>
+</template>
+<!-- modal window content ends here -->

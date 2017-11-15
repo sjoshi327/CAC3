@@ -1,0 +1,188 @@
+<html lang="en">
+
+<!--head tag-->
+<head>
+  
+  <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet"> <!--Plugin Css-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> <!--Custom Font-->
+</head>
+<!--ending of head tag-->
+
+<!--starting of body tag-->
+<body class="fixed-nav bg-dark" id="page-top">
+
+  <!--nav bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="#">{{config.employeedash.CENTRALIZED_ACCESS_CONTROL}}</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Employee Dashboard">
+          <a class="nav-link">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">{{config.employeedash.DASHBOARD}}
+               </span>
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{config.employeedash.NEW_REQUEST}}">
+          <a class="nav-link" [routerLink]="['/accessforms']">
+              <i class="fa fa-fw fa-area-chart"></i>
+              <span class="nav-link-text">
+                {{config.employeedash.NEW_REQUEST}}</span>
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{config.employeedash.HISTORY}}">
+          <a class="nav-link">
+              <i class="fa fa-fw fa-table"></i>
+              <span class="nav-link-text">
+                {{config.employeedash.HISTORY}}</span>
+            </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left"></i>
+            </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-5">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" href="#" id="messagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-envelope"></i>
+              <span class="d-lg-none">Messages
+                <span class="badge badge-pill badge-primary">12</span>
+              </span>
+              <span class="new-indicator text-primary d-none d-lg-block">
+                <i class="fa fa-fw fa-circle"></i>
+                <span class="number">12</span>
+              </span>
+            </a>
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">New Messages:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <strong>Tanupreet</strong>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">Hey Prakhar</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <strong>Shivam</strong>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">Hi!!!</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <strong>Shubhang</strong>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">Thank You Prakhar for your hardwork in this Project</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">
+                View all messages
+              </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" href="#" id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-bell"></i>
+              <span class="d-lg-none">Status Alerts
+                <span class="badge badge-pill badge-warning">6 New</span>
+              </span>
+              <span class="new-indicator text-warning d-none d-lg-block">
+                <i class="fa fa-fw fa-circle"></i>
+                <span class="number">6</span>
+              </span>
+            </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <span class="text-success">
+                  <strong>
+                    <i class="fa fa-long-arrow-up"></i>
+                    Status Update</strong>
+                </span>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <span class="text-danger">
+                  <strong>
+                    <i class="fa fa-long-arrow-down"></i>
+                    Status Update</strong>
+                </span>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <span class="text-success">
+                  <strong>
+                    <i class="fa fa-long-arrow-up"></i>
+                    Status Update</strong>
+                </span>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">
+                View all alerts
+              </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+              <i class="fa fa-fw fa-sign-out"></i>
+              Back To Iniitian Portal</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--nav bar end-->
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <ol class="breadcrumb">
+
+        <!-- dashboard of employee -->
+        <li class="breadcrumb-item">
+          <a href="#">{{config.employeedash.DASHBOARD}}</a>
+        </li>
+        <li class="breadcrumb-item active">{{config.employeedash.MY_DASHBOARD}}</li>
+        <!-- end of dashboard -->
+
+      </ol>
+
+      <!-- request status -->
+      <div class="card mb-3">
+        <div class="card-body acolor text-center">
+          <a>{{reqstatus}}</a>
+        </div>
+      </div>
+      <!-- end of status  -->
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="sticky-footer">
+    <div class="container">
+      <div class="text-center">
+        <small>{{config.employeedash.COPYRIGHT}}</small>
+      </div>
+    </div>
+  </footer>
+  <!-- footer end -->
+  
+  <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+</body>
+<!-- ending of body tag -->
+
+</html>
+

@@ -1,0 +1,407 @@
+<!--start of the main div-->
+<div class="main">
+  <div class="container-fluid">
+    <div class="row pad">
+      <div class="col-sm-2 align">
+        <img src="{{config.hrform.IMGSRC}}" alt="logo" class="logo">
+      </div>
+      <div class="col-sm-8 text-center">
+        <h2><strong>{{config.hrform.IRHEADING}}</strong></h2>
+      </div>
+      <div class="col-sm-2">
+        <h4 class="text-center">{{config.hrform.VERSION}}</h4>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <!--guidelines block  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <a (click)="openModalWithClass(template)"><h6 class="acolor">{{config.hrform.GUIDELINES}}</h6></a>
+      </div>
+    </div>
+  </div>
+  <!-- end of guidelines block  -->
+  <!--  general block  -->
+  <div class="container">
+    <div class="row color rounded bg-info text-white">
+      <h5>{{config.hrform.GENERAL}}</h5>
+    </div>
+    <!--Category block-->
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.hrform.CATEGORY}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control bg-white" type="text" name="newname" value="Employee" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of category block-->
+    <!-- access Type block -->
+    <div class="row border mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-5">
+            <h6><strong>{{config.hrform.ACCESS}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control bg-white" type="text" name="newname" value="New Access" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of access type block-->
+    <!--ir 71 form block  -->
+    <div class="row color rounded bg-info text-white mt-2">
+      <h5>{{config.hrform.IR_FORM}}</h5>
+    </div>
+    <!--end of ir 71 form block  -->
+    <!--employee id and type block  -->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <h6><strong>{{config.hrform.EMP_ID}}:</strong></h6>
+        <input class="form-control" type="text" name="designation" value={{empp.employeeID}} ngModel>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <h6><strong>{{config.hrform.EMP_TYPE}}:</strong></h6>
+        <input class="form-control" type="text" name="designation" value={{empp.empType}} ngModel>
+      </div>
+    </div>
+    <!--end of employee type and id block-->
+    <!--employee details block-->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.hrform.NAME}}:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="name" value={{empp.employeeName}} ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.hrform.DOJ}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" value={{empp.dateOfJoining}} readonly="" name="doj" ngModel/>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-4 py-2">
+            <h6><strong>{{config.hrform.DESIGNATION}}:</strong></h6>
+          </div>
+          <div class="col-sm-8">
+            <input class="form-control" type="text" name="designation" value={{empp.designation}} ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of employee details block-->
+    <!--employee project and ou block-->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.hrform.PROJECT}}:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="project" value={{empp.project}} ngModel>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-2 py-2">
+            <h6><strong>{{config.hrform.OU}}:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="ou" value={{empp.department}} ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of project and ou block-->
+    <!--status -->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-4 py-2">
+            <h6><strong>{{config.hrform.STATUS}}:</strong></h6>
+          </div>
+          <div class="col-sm-4 py-2">
+            <label class="custom-control custom-radio">
+              <input id="radio3" name="status" type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.hrform.PERMANENT}}</span>
+            </label>
+          </div>
+          <div class="col-sm-4 py-2">
+            <label class="custom-control custom-radio">
+              <input id="radio3" name="status" type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.hrform.TEMPORARY}}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-7 py-2">
+            <h6><strong>{{config.hrform.DOE_TEMP}}:</strong></h6>
+          </div>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" value={{empp.dateOfExpiry}} readonly="true" name="doe" ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of status-->
+    <!--project transfer block -->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-12 py-2">
+            <h6><input type="checkbox" name="transfer"><strong> {{config.hrform.PROJECT_TRANSFER}} </strong></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of project transfer block-->
+    <!--project name block-->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.hrform.EXISTING_PROJECT}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="existname" value={{empp.existingProject}} ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.hrform.NEW_PROJECT}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="newname" value={{empp.newProject}} ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of project name block-->
+    <!--signature block-->
+    <div class="row color rounded bg-info mt-2 text-white">
+      <h5>{{config.hrform.SIGNATURES}}</h5>
+    </div>
+    <!--end of signature block-->
+    <!--applicant signature and date block-->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.hrform.APPLICANTS_SIGN}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="existname" ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>{{config.hrform.DATE}}:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" value={{empp.requestDate}} name="appdate" ngModel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of applicant signature and date block-->
+    <div class="row color rounded mt-2 bg-info text-white">
+      <h5>{{config.hrform.PHY_ACCESS}}</h5>
+    </div>
+    <!--zones block-->
+    <div class="row border mt-1 bg-white">
+      <div class="col-sm-8 border py-3">
+        <div class="row">
+          <div class="col-sm-3">
+            <h6><strong>{{config.hrform.ZONES}}:</strong></h6>
+          </div>
+          <div class="col-sm-3">
+            <h6><input type="checkbox" [(ngModel)]="public" value="public" name="employee"> {{config.hrform.PUBLIC}}</h6>
+          </div>
+          <div class="col-sm-3">
+            <h6><input type="checkbox" [(ngModel)]="internal" value="internal" name="employee"> {{config.hrform.INTERNAL}}</h6>
+          </div>
+          <div class="col-sm-3">
+            <h6><input type="checkbox" [(ngModel)]="restricted" value="restricted" name="employee"> {{config.hrform.RESTRICTED}}</h6>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-3 py-2">
+            <h6><strong>{{config.hrform.DETAILS}}:</strong></h6>
+          </div>
+          <div class="col-sm-9">
+            <input class="form-control" type="text" name="employee">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border">
+        <div class="row border">
+          <div class="col-sm-12 py-3">
+            <label class="custom-control custom-radio">
+              <input id="radio5" name="accessType" type="radio" value="Temporary" class="custom-control-input" [(ngModel)]="accessType">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.hrform.TEMPORARY}}</span>
+            </label>
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col-sm-12 py-3">
+            <label class="custom-control custom-radio">
+              <input id="radio5" name="accessType" type="radio" value="Permanent" class="custom-control-input" [(ngModel)]="accessType">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{config.hrform.PERMANENT}}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of zone block-->
+    <!--First Row ends here-->
+    <div class="row color rounded  bg-info mt-2 text-white">
+      <h5>{{config.hrform.AUTHORIZE_SIGN}}</h5>
+    </div>
+    <!--authorization signatures block-->
+    <div class="row mt-1 border">
+      <div class="col-sm-12 border">
+        <div class="row">
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-3 py-2">
+                <h6><strong>{{config.hrform.HRO}}</strong></h6>
+              </div>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" name="">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-3 py-2">
+                <h6><strong>{{config.hrform.CSO}}</strong></h6>
+              </div>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" name="" readonly="true">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-5 py-2">
+                <h6><strong>{{config.hrform.DH_PH_PM}}</strong></h6>
+              </div>
+              <div class="col-sm-7">
+                <input class="form-control" type="text" name="" [(ngModel)]="sign" readonly="true">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-3 py-2">
+                <h6><strong>{{config.hrform.CISO}}</strong></h6>
+              </div>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" name="" readonly="true">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder="{{config.hrform.DATE_FORMAT}}" [(ngModel)]="datepickerModel" readonly="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder="{{config.hrform.DATE_FORMAT}}" readonly="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder="{{config.hrform.DATE_FORMAT}}" readonly="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 py-3">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control bg-white" placement="top" placeholder="{{config.hrform.DATE_FORMAT}}" readonly="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of authorization signature block-->
+    <!-- accept and reject block -->
+    <div class="row justify-content-center mt-2 mb-3">
+      <div class="col-sm-3">
+        <button class="btn btn-success form-control" (click)="accept(template1)">{{config.hrform.ACCEPT}}</button>
+      </div>
+      <div class="col-sm-3">
+        <button class="btn btn-danger form-control" (click)="reject(template2)">{{config.hrform.SEND_BACK}}</button>
+      </div>
+    </div>
+    <!-- end of accept and reject block -->
+  </div>
+  <!-- end of general block -->
+</div>
+<!-- end of main div block -->
+<!--template1 block -->
+<template #template1>
+  <div class="modal-header">
+    <h4 class="modal-title">{{config.hrform.MESSAGE}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <strong>{{config.hrform.SUCCESS_MSG}}</strong>
+  </div>
+</template>
+<!--end of template1 block -->
+<!-- template2 block -->
+<template #template2>
+  <div class="modal-header">
+    <h4 class="modal-title">{{config.hrform.MESSAGE}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <strong>{{config.hrform.BACK_MSG}}?</strong>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-md btn-primary" (click)="backit()">{{config.hrform.YES}}</button>
+    <button class="btn btn-md btn-danger" (click)="modalRef.hide()">{{config.hrform.NO}}</button>
+  </div>
+</template>
+<!--end of template2 block -->
